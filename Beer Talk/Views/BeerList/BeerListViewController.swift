@@ -42,7 +42,6 @@ class BeerListViewController: UICollectionViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let selectedCell = sender as! BeerCell
         let selectedCellIndexPath = self.collectionView.indexPath(for: selectedCell)
@@ -83,7 +82,6 @@ class BeerListViewController: UICollectionViewController {
             model?.loadImage(forBeer: beerToSetup!, completion: { (newThumbnail) in
                 beerToSetup?.thumbnail = newThumbnail
                 beerToSetup?.isThumbnailLoaded = true
-//                cell.didFinishLoadingImage(beerToSetup: beerToSetup!)
                 cell.setupForBeer(beerToSetup: beerToSetup!)
             })
         }

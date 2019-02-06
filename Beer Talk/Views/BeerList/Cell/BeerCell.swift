@@ -15,17 +15,19 @@ class BeerCell: UICollectionViewCell {
     @IBOutlet weak var imageLoadingIndicator: UIActivityIndicatorView!
     
     func setupForBeer(beerToSetup: BeerModel){
-        imageLoadingIndicator.startAnimating()
-        imageLoadingIndicator.hidesWhenStopped = true
-        self.beerImageView.image = beerToSetup.thumbnail
-        self.beerImageView.alpha = 0.6
-        self.alcoholPercentageLabel.text = "\(beerToSetup.abv)% Alcohol"
-        self.beerNameLabel.text = beerToSetup.name
-    }
-    
-    func didFinishLoadingImage(beerToSetup: BeerModel){
-        beerImageView.image = beerToSetup.thumbnail
-        beerImageView.alpha = 1
-        imageLoadingIndicator.stopAnimating()
+//        if(!beerToSetup.isThumbnailLoaded){
+            imageLoadingIndicator.hidesWhenStopped = true
+            self.beerImageView.image = beerToSetup.thumbnail
+            self.alcoholPercentageLabel.text = "\(beerToSetup.abv)% Alcohol"
+            self.beerNameLabel.text = beerToSetup.name
+//        } else {
+        if(beerToSetup.isThumbnailLoaded){
+            beerImageView.alpha = 1
+            imageLoadingIndicator.stopAnimating()
+        } else {
+            beerImageView.alpha = 0.6
+            imageLoadingIndicator.startAnimating()
+        }
+//        }
     }
 }

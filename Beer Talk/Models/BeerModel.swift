@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct BeerModel {
+class BeerModel {
     let thumbnailPath : String
     var thumbnail : UIImage
     var isThumbnailLoaded : Bool

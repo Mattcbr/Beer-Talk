@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C15AE7C475B0D5B3F2B3390 /* Pods_Beer_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184A9371ABF5FE9421F199D5 /* Pods_Beer_Talk.framework */; };
+		2F01C6FC220AF82700981038 /* BeerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01C6FB220AF82700981038 /* BeerDetailsViewController.swift */; };
 		2F5A71832209FAFB00F2C147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A71822209FAFB00F2C147 /* AppDelegate.swift */; };
 		2F5A71852209FAFB00F2C147 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A71842209FAFB00F2C147 /* ViewController.swift */; };
 		2F5A71882209FAFB00F2C147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5A71862209FAFB00F2C147 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		184A9371ABF5FE9421F199D5 /* Pods_Beer_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beer_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F01C6FB220AF82700981038 /* BeerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsViewController.swift; sourceTree = "<group>"; };
 		2F5A717F2209FAFB00F2C147 /* Beer Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer Talk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5A71822209FAFB00F2C147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F5A71842209FAFB00F2C147 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		2F5A71B2220A222D00F2C147 /* BeerDetails */ = {
 			isa = PBXGroup;
 			children = (
+				2F01C6FB220AF82700981038 /* BeerDetailsViewController.swift */,
 			);
 			path = BeerDetails;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			files = (
 				2F5A71C1220A4E5700F2C147 /* BeerListViewModel.swift in Sources */,
 				2F5A71B4220A225000F2C147 /* BeerListViewController.swift in Sources */,
+				2F01C6FC220AF82700981038 /* BeerDetailsViewController.swift in Sources */,
 				2F5A71852209FAFB00F2C147 /* ViewController.swift in Sources */,
 				2F5A71832209FAFB00F2C147 /* AppDelegate.swift in Sources */,
 				2F5A71B9220A22C800F2C147 /* BeerCell.swift in Sources */,

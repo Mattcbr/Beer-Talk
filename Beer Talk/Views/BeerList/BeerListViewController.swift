@@ -39,15 +39,19 @@ class BeerListViewController: UICollectionViewController {
         searchController.searchBar.placeholder = "Search Beers"
         self.navigationItem.searchController = searchController
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        let selectedCell = sender as! BeerCell
+        let selectedCellIndexPath = self.collectionView.indexPath(for: selectedCell)
+        let selectedBeer = model!.beersArray[selectedCellIndexPath!.row]
+        
+        let destinationViewController = segue.destination as! BeerDetailsViewController
+        destinationViewController.selectedBeer = selectedBeer
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
@@ -79,7 +83,8 @@ class BeerListViewController: UICollectionViewController {
             model?.loadImage(forBeer: beerToSetup!, completion: { (newThumbnail) in
                 beerToSetup?.thumbnail = newThumbnail
                 beerToSetup?.isThumbnailLoaded = true
-                cell.didFinishLoadingImage(beerToSetup: beerToSetup!)
+//                cell.didFinishLoadingImage(beerToSetup: beerToSetup!)
+                cell.setupForBeer(beerToSetup: beerToSetup!)
             })
         }
     
@@ -108,7 +113,7 @@ class BeerListViewController: UICollectionViewController {
         
         if (diff<30 && !isLoadingData)    //If the scroll is near the bottom, and there is no data being loaded, make a new request.
         {
-            model?.requestMoreMovies()
+            model?.requestMoreBeers()
             isLoadingData = true
         }
     }

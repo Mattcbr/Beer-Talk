@@ -42,7 +42,7 @@ class BeerListViewModel: RequestDelegate {
         }
     }
     
-    func requestMoreMovies() {
+    func requestMoreBeers() {
         pageToRequest = pageToRequest + 1
         self.requestHandler.requestBeers(pageToRequest: pageToRequest)
     }

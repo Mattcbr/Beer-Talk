@@ -99,6 +99,14 @@ class BeerListViewController: UICollectionViewController {
         self.beerLoadingIndicator.stopAnimating()
     }
     
+    func loadingBeersFailed(){
+        let failAlert = UIAlertController(title: "Error", message: "Failed to load Beers. Please, check your connection and try again. If this keeps happening, contact support.", preferredStyle: UIAlertController.Style.alert)
+        let defaultAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        
+        failAlert.addAction(defaultAction)
+        self.present(failAlert, animated: true, completion: nil)
+    }
+    
     //MARK: Infinite Scroll
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

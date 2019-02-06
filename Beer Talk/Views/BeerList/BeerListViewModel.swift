@@ -33,7 +33,7 @@ class BeerListViewModel: RequestDelegate {
     }
     
     func didFailToLoadBeers(withError error: Error) {
-        print("Failed to load beers")
+        controller.loadingBeersFailed()
     }
     
     func loadImage(forBeer beer:BeerModel, completion: @escaping (_ image: UIImage) -> Void){

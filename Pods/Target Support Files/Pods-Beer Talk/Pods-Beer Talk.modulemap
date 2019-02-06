@@ -1,0 +1,6 @@
+framework module Pods_Beer_Talk {
+  umbrella header "Pods-Beer Talk-umbrella.h"
+
+  export *
+  module * { export * }
+}

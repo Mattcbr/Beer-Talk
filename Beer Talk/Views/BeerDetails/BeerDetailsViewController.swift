@@ -31,8 +31,23 @@ class BeerDetailsViewController: UIViewController {
         beerImageView.image = selectedBeer?.thumbnail
         beerNameLabel.text = selectedBeer?.name
         beerTaglineLabel.text = selectedBeer?.tagline
-        beerABVLabel.text = "Alcohol By Volume (ABV):\n\(selectedBeer!.abv)%"
-        beerIBULabel.text = "Bitterness :\n\(selectedBeer!.ibu) (IBU)"
         beerDescriptionLabel.text = selectedBeer?.description
+        
+        var ABVText = String()
+        if(selectedBeer?.abv == 1000){
+           ABVText = "Alcohol By Volume:\nNot Available"
+        } else {
+            ABVText = "Alcohol By Volume:\n\(selectedBeer!.abv)%"
+        }
+        
+        var IBUText = String()
+        if(selectedBeer?.ibu == 1000){
+            IBUText = "Bitterness :\nNot Available"
+        } else {
+            ABVText = "Bitterness :\n\(selectedBeer!.ibu) (IBU)"
+        }
+        
+        beerABVLabel.text = ABVText
+        beerIBULabel.text = IBUText
     }
 }

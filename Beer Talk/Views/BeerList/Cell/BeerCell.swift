@@ -17,7 +17,6 @@ class BeerCell: UICollectionViewCell {
     func setupForBeer(beerToSetup: BeerModel){
             imageLoadingIndicator.hidesWhenStopped = true
             self.beerImageView.image = beerToSetup.thumbnail
-            self.alcoholPercentageLabel.text = "\(beerToSetup.abv)% Alcohol"
             self.beerNameLabel.text = beerToSetup.name
         if(beerToSetup.isThumbnailLoaded){
             beerImageView.alpha = 1
@@ -26,5 +25,13 @@ class BeerCell: UICollectionViewCell {
             beerImageView.alpha = 0.6
             imageLoadingIndicator.startAnimating()
         }
+        
+        var IBUText = String()
+        if(beerToSetup.ibu == 1000){
+            IBUText = "ABV Not Available"
+        } else {
+            IBUText = "\(beerToSetup.abv)% Alcohol"
+        }
+        self.alcoholPercentageLabel.text = IBUText
     }
 }
